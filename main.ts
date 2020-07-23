@@ -1,18 +1,12 @@
 input.onButtonPressed(Button.A, function () {
     led.unplot(x, 0)
-    direction = -1
+    direction = Math.max(0, x - 1)
     led.plot(x, 0)
-    if (x <= 4) {
-    	
-    }
 })
 input.onButtonPressed(Button.B, function () {
     led.unplot(x, 0)
-    x += direction
+    direction = Math.min(4, x + 1)
     led.plot(x, 0)
-    if (x <= 4) {
-        direction = -1
-    }
 })
 let x = 0
 let direction = 0
